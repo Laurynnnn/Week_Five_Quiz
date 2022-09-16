@@ -55,9 +55,9 @@ class Transactions:
         elif choice ==  "c" or "C" :
             # trans == "Balance Check"
             print(self.account.balance)
-        # elif choice == "z" or "Z":
-        #     print("Exiting...")
-        #     break
+        elif choice == "z" or "Z":
+            print("Exiting...")
+            break
         else:
             print("Invalid choice. Enter right option.")
             self.type = input("Enter d or D for deposit, w or W for withdraw, c or C to check balance: ")
@@ -74,12 +74,11 @@ customer.adding_account(account)
 
 print(bank)
 print(customer)
-
+#transaction object
 transaction = Transactions(account, 3000.0, "DEpo")
 
 Transactions.make_transaction(transaction)
 
-#transaction object
 # transaction = Transactions(account, amount, trans)
 
 print(transaction)
