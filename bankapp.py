@@ -8,14 +8,8 @@ class BankAccount:
     def __repr__(self):
         return f"account_number: {self.account_number} \n Balance: {self.balance} \n Owner: {self.owner} \
          \n type: {self.type}"
-         
-    # def details():
-    #     Details = []
-    #     account_number = input("Please enter account number: ")
-    #     # self.balance = Details[
         
-
-    
+  
          
 class Bank:
 
@@ -44,23 +38,26 @@ class Customer:
     
 class Transactions:
     def __init__(self, account, amount, type):
-        self.name = name
-        self.accounts = accounts
+        self.account = account
         self.amount = amount
         self.type = type
     
-    def transaction(self):
-        self.type = input("Enter d or D for deposit, w or W for withdraw, c or C to check balance: ")
-        if self.type == "d" or "D" :
-            amount == float(input("How much? ")) 
-            self.account.balance = self.account.balance + amount
-        elif self.type ==   "w" or "W" :
-            amount = float(input("How much? "))
-            self.account.balance = self.account.balance + amount
-        elif self.type ==  "c" or "C" :
+    def make_transaction(self):
+        choice = input("Enter d or D for deposit, w or W for withdraw, c or C to check balance: ")
+        if choice == "d" or "D" :
+            # trans == "Deposit"
+            self.amount == float(input("How much? ")) 
+            self.account.balance = self.account.balance + self.amount
+        elif choice ==   "w" or "W" :
+            # trans == "Withdraw"
+            self.amount = float(input("How much? "))
+            self.account.balance = self.account.balance + self.amount
+        elif choice ==  "c" or "C" :
+            # trans == "Balance Check"
             print(self.account.balance)
-        elif self.type == "z" or "Z":
-            exit()
+        # elif choice == "z" or "Z":
+        #     print("Exiting...")
+        #     break
         else:
             print("Invalid choice. Enter right option.")
             self.type = input("Enter d or D for deposit, w or W for withdraw, c or C to check balance: ")
@@ -78,5 +75,11 @@ customer.adding_account(account)
 print(bank)
 print(customer)
 
+transaction = Transactions(account, 3000.0, "DEpo")
+
+Transactions.make_transaction(transaction)
+
 #transaction object
-transaction = Transactions(account, amount, type)
+# transaction = Transactions(account, amount, trans)
+
+print(transaction)
